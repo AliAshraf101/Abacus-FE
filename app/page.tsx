@@ -42,6 +42,9 @@ export default function Home() {
       {/* Part4: Enterprise Data Sources */}
       <EnterpriseDataSourcesSection />
 
+      {/* Part5: Enterprise Data Sources Integration */}
+      <EnterpriseDataSourcesIntegrationSection />
+
       {/* Part6: Knowledge Management */}
       <KnowledgeManagementSection />
 
@@ -52,8 +55,14 @@ export default function Home() {
       <TruthAssuranceSection />
 
       {/* Filter Buttons Section */}
-      <div className="bg-white">
-        <div className="max-w-[1440px] mx-auto px-4 md:px-[120px]">
+      <div className="bg-white relative">
+        <div className="absolute inset-0 flex justify-center pointer-events-none">
+          <div className="w-full max-w-[1440px] relative">
+            <div className="absolute top-0 bottom-0 w-px bg-black/20 hidden xl:block" style={{ left: '100px' }} />
+            <div className="absolute top-0 bottom-0 w-px bg-black/20 hidden xl:block" style={{ right: '101px' }} />
+          </div>
+        </div>
+        <div className="max-w-[1440px] mx-auto px-4 md:px-[132px]">
           <FilterButtons />
         </div>
       </div>
@@ -163,18 +172,26 @@ function Logo() {
 function Hero() {
   return (
     <div className="relative bg-black">
-      <div className="absolute left-0 top-0 h-[1663px] w-px bg-white/40 hidden xl:block" style={{ left: '120px' }} />
-      <div className="absolute right-0 top-0 h-[1663px] w-px bg-white/40 hidden xl:block" style={{ right: '121px' }} />
+      <div className="absolute inset-0 flex justify-center pointer-events-none">
+        <div className="w-full max-w-[1440px] relative">
+          <div className="absolute top-0 bottom-0 w-px bg-white/40 hidden xl:block" style={{ left: '100px' }} />
+          <div className="absolute top-0 bottom-0 w-px bg-white/40 hidden xl:block" style={{ right: '101px' }} />
+        </div>
+      </div>
       <div className="absolute left-0 w-full border-t border-white/40 hidden lg:block" style={{ top: '726px' }} />
 
       <GridDots />
 
-      {/* Dots Pattern - positioned absolutely on top */}
-      <div className="absolute top-20 right-[140px] hidden xl:block" style={{ zIndex: 50 }}>
-        <img src="/Dots.png" alt="Decorative dots pattern" className="w-auto h-auto max-w-[360px]" />
+      {/* Dots Pattern - positioned inside centered container to align with right line */}
+      <div className="absolute inset-0 flex justify-center pointer-events-none" style={{ zIndex: 50 }}>
+        <div className="w-full max-w-[1440px] relative">
+          <div className="absolute top-20 hidden xl:block" style={{ right: '140px' }}>
+            <img src="/Dots.png" alt="Decorative dots pattern" className="w-auto h-auto max-w-[360px] pointer-events-auto" />
+          </div>
+        </div>
       </div>
 
-      <div className="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-[120px] relative">
+      <div className="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-[132px] relative">
         <div className="pt-24 pb-16 xl:pt-32 xl:pb-48 xl:max-w-[600px]">
           <MainHeadingSection />
         </div>
@@ -187,12 +204,14 @@ function Hero() {
 
 function GridDots() {
   return (
-    <>
-      <div className="absolute w-2 h-2 rounded-full bg-black border border-white/40 hidden xl:block" style={{ left: '117px', top: '-4px' }} />
-      <div className="absolute w-2 h-2 rounded-full bg-black border border-white/40 hidden xl:block" style={{ left: '117px', top: '723px' }} />
-      <div className="absolute w-2 h-2 rounded-full bg-black border border-white/40 hidden xl:block" style={{ right: '125px', top: '-4px' }} />
-      <div className="absolute w-2 h-2 rounded-full bg-black border border-white/40 hidden xl:block" style={{ right: '125px', top: '723px' }} />
-    </>
+    <div className="absolute inset-0 flex justify-center pointer-events-none">
+      <div className="w-full max-w-[1440px] relative">
+        <div className="absolute w-2 h-2 rounded-full bg-black border border-white/40 hidden xl:block" style={{ left: '96px', top: '-4px' }} />
+        <div className="absolute w-2 h-2 rounded-full bg-black border border-white/40 hidden xl:block" style={{ left: '96px', top: '723px' }} />
+        <div className="absolute w-2 h-2 rounded-full bg-black border border-white/40 hidden xl:block" style={{ right: '97px', top: '-4px' }} />
+        <div className="absolute w-2 h-2 rounded-full bg-black border border-white/40 hidden xl:block" style={{ right: '97px', top: '723px' }} />
+      </div>
+    </div>
   );
 }
 
@@ -210,7 +229,7 @@ function MainHeadingSection() {
         <div className="flex flex-col">
           <h1 className="text-[clamp(32px,5vw,48px)] font-medium leading-[1.33] tracking-[-0.04em] text-white">
             Enterprise AI Infrastructure Built For{" "}
-            <span className="inline-flex items-baseline gap-1 border-b-2 border-[#645AFF] pb-0.5">
+            <span className="inline-flex items-baseline gap-1 border-b-2 border-[#645AFF] pb-2">
               Banking
               <svg className="inline-block" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="5" cy="5" r="5" fill="#645AFF" />
@@ -280,12 +299,16 @@ function IndustryLeaders() {
 function IndustrySolutions() {
   return (
     <section className="relative bg-white">
-      <div className="absolute left-0 top-0 h-full w-px bg-black/20 hidden xl:block" style={{ left: '120px' }} />
-      <div className="absolute right-0 top-0 h-full w-px bg-black/20 hidden xl:block" style={{ right: '121px' }} />
+      <div className="absolute inset-0 flex justify-center pointer-events-none">
+        <div className="w-full max-w-[1440px] relative">
+          <div className="absolute top-0 bottom-0 w-px bg-black/20 hidden xl:block" style={{ left: '100px' }} />
+          <div className="absolute top-0 bottom-0 w-px bg-black/20 hidden xl:block" style={{ right: '101px' }} />
+        </div>
+      </div>
 
       <SolutionGridDots />
 
-      <div className="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-[120px] relative">
+      <div className="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-[132px] relative">
         <div className="pt-16 pb-8 xl:pt-24">
           <div className="flex flex-col gap-4">
             <div className="flex items-center px-1">
@@ -341,7 +364,7 @@ function IndustrySolutions() {
             </button>
           </div>
 
-          <div className="relative flex items-center justify-center min-h-[480px]">
+          <div className="relative flex items-center justify-end min-h-[480px]">
             <div className="relative w-full max-w-[480px] h-[480px]">
               <div className="absolute inset-0 flex items-center justify-center">
                 <img
@@ -369,14 +392,16 @@ function IndustrySolutions() {
 
 function SolutionGridDots() {
   return (
-    <>
-      <div className="absolute w-2 h-2 rounded-full bg-white border border-black/20 hidden xl:block" style={{ left: '117px', top: '291px' }} />
-      <div className="absolute w-2 h-2 rounded-full bg-white border border-black/20 hidden xl:block" style={{ left: '117px', top: '356px' }} />
-      <div className="absolute w-2 h-2 rounded-full bg-white border border-black/20 hidden xl:block" style={{ right: '125px', top: '291px' }} />
-      <div className="absolute w-2 h-2 rounded-full bg-white border border-black/20 hidden xl:block" style={{ right: '125px', top: '356px' }} />
-      <div className="absolute w-2 h-2 rounded-full bg-white border border-black/20 hidden xl:block" style={{ left: '117px', bottom: '0px' }} />
-      <div className="absolute w-2 h-2 rounded-full bg-white border border-black/20 hidden xl:block" style={{ right: '125px', bottom: '0px' }} />
-    </>
+    <div className="absolute inset-0 flex justify-center pointer-events-none">
+      <div className="w-full max-w-[1440px] relative">
+        <div className="absolute w-2 h-2 rounded-full bg-white border border-black/20 hidden xl:block" style={{ left: '96px', top: '291px' }} />
+        <div className="absolute w-2 h-2 rounded-full bg-white border border-black/20 hidden xl:block" style={{ left: '96px', top: '356px' }} />
+        <div className="absolute w-2 h-2 rounded-full bg-white border border-black/20 hidden xl:block" style={{ right: '97px', top: '291px' }} />
+        <div className="absolute w-2 h-2 rounded-full bg-white border border-black/20 hidden xl:block" style={{ right: '97px', top: '356px' }} />
+        <div className="absolute w-2 h-2 rounded-full bg-white border border-black/20 hidden xl:block" style={{ left: '96px', bottom: '0px' }} />
+        <div className="absolute w-2 h-2 rounded-full bg-white border border-black/20 hidden xl:block" style={{ right: '97px', bottom: '0px' }} />
+      </div>
+    </div>
   );
 }
 
@@ -447,14 +472,16 @@ function StatsSection() {
 
   return (
     <section className="relative w-full bg-[#645AFF] overflow-hidden">
-      <div className="absolute left-0 top-0 bottom-0 w-full max-w-[1440px] mx-auto">
-        <div className="absolute left-[120px] top-0 bottom-0 w-px bg-white/20 hidden lg:block" />
-        <div className="absolute right-[120px] top-0 bottom-0 w-px bg-white/20 hidden lg:block" />
+      <div className="absolute inset-0 flex justify-center pointer-events-none">
+        <div className="w-full max-w-[1440px] relative">
+          <div className="absolute top-0 bottom-0 w-px bg-white/20 hidden xl:block" style={{ left: '100px' }} />
+          <div className="absolute top-0 bottom-0 w-px bg-white/20 hidden xl:block" style={{ right: '101px' }} />
+        </div>
       </div>
 
-      <div className="relative max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[120px]">
+      <div className="relative max-w-[1440px] mx-auto px-4 md:px-8 lg:px-[132px]">
         <div className="py-8 sm:py-12 lg:py-[88px]">
-          <div className="flex flex-col gap-4 px-0 sm:px-4 lg:px-8">
+          <div className="flex flex-col gap-4">
             <div className="px-1">
               <span className="text-white font-mono text-xs sm:text-sm uppercase tracking-[1.68px] font-normal">
                 Stats
@@ -478,10 +505,11 @@ function StatsSection() {
           {stats.map((stat, index) => (
             <div
               key={index}
-              className={`flex flex-col gap-4 p-6 sm:p-8 lg:p-8 ${index < stats.length - 1 ? "border-b sm:border-b-0 lg:border-r border-white/20" : ""
-                } ${index === 1 || index === 3 ? "sm:border-r-0 lg:border-r" : ""
-                } ${index < 2 ? "sm:border-r" : ""
-                }`}
+              className={`flex flex-col gap-4 py-6 sm:py-8 lg:py-8 
+                ${index === 0 ? "pr-3 lg:pr-4" : index === stats.length - 1 ? "pl-3 lg:pl-4" : "px-3 lg:px-4"}
+                ${index < stats.length - 1 ? "border-b sm:border-b-0 lg:border-r border-white/20" : ""}
+                ${index === 1 || index === 3 ? "sm:border-r-0 lg:border-r" : ""}
+                ${index < 2 ? "sm:border-r" : ""}`}
             >
               <div className="text-white text-5xl sm:text-6xl lg:text-[80px] font-normal leading-tight lg:leading-[96px] tracking-[-0.08em] lg:tracking-[-6.4px]">
                 {stat.value}
@@ -552,7 +580,7 @@ function ProductsSection() {
       imageOpacity: "opacity-60",
       hasButton: false,
       svg: (
-        <svg className="w-full h-full aspect-square absolute -right-[324px] -bottom-[324px] opacity-60" width="324" height="324" viewBox="0 0 324 324" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg className="w-[200px] h-[200px] absolute right-0 bottom-0 opacity-40" viewBox="0 0 324 324" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g opacity="0.6" clipPath="url(#clip0_57_19684)">
             <path d="M344.828 197.552C356.33 186.05 356.33 167.402 344.828 155.901C333.327 144.399 314.679 144.399 303.177 155.901C291.676 167.402 291.676 186.05 303.177 197.552C314.679 209.053 333.327 209.053 344.828 197.552Z" fill="black" fillOpacity="0.05" />
             <path d="M205.806 328.73C208.412 312.674 197.509 297.546 181.453 294.94C165.398 292.334 150.27 303.236 147.663 319.292C145.057 335.347 155.96 350.476 172.016 353.082C188.071 355.688 203.199 344.785 205.806 328.73Z" fill="black" fillOpacity="0.05" />
@@ -592,7 +620,7 @@ function ProductsSection() {
       imageOpacity: "opacity-80",
       hasButton: false,
       svg: (
-        <svg className="w-full h-full aspect-square absolute -right-[324px] -bottom-[324px] opacity-80" width="324" height="324" viewBox="0 0 324 324" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg className="w-[200px] h-[200px] absolute right-0 bottom-0 opacity-40" viewBox="0 0 324 324" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g opacity="0.8" clipPath="url(#clip0_57_19693)">
             <path d="M327.241 0V648H320.76V0H327.241Z" fill="black" fillOpacity="0.05" />
             <path d="M410.988 11.8803L243.273 637.796L237.014 636.12L404.729 10.2034L410.988 11.8803Z" fill="black" fillOpacity="0.05" />
@@ -619,13 +647,15 @@ function ProductsSection() {
 
   return (
     <section className="relative w-full bg-white overflow-hidden">
-      <div className="absolute left-0 top-0 bottom-0 w-full max-w-[1440px] mx-auto">
-        <div className="absolute left-[120px] top-0 bottom-0 w-px bg-black/20 hidden lg:block" />
-        <div className="absolute right-[120px] top-0 bottom-0 w-px bg-black/20 hidden lg:block" />
-        <div className="absolute left-1/2 top-[294px] bottom-0 w-px bg-black/20 hidden lg:block" />
+      <div className="absolute inset-0 flex justify-center pointer-events-none">
+        <div className="w-full max-w-[1440px] relative">
+          <div className="absolute top-0 bottom-0 w-px bg-black/20 hidden xl:block" style={{ left: '100px' }} />
+          <div className="absolute top-0 bottom-0 w-px bg-black/20 hidden xl:block" style={{ right: '101px' }} />
+          <div className="absolute left-1/2 top-[294px] bottom-0 w-px bg-black/20 hidden xl:block" />
+        </div>
       </div>
 
-      <div className="relative max-w-[1440px] mx-auto px-4 md:px-8 lg:px-[120px]">
+      <div className="relative max-w-[1440px] mx-auto px-4 md:px-8 lg:px-[132px]">
         <div className="py-8 sm:py-12 lg:py-[88px]">
           <div className="flex flex-col gap-4">
             <div className="px-1">
@@ -651,18 +681,18 @@ function ProductsSection() {
           {products.slice(0, 2).map((product, index) => (
             <div
               key={index}
-              className={`p-2 ${index === 0 ? "lg:border-r border-black/20" : ""}`}
+              className={`py-2 ${index === 0 ? "lg:border-r border-black/20 lg:pr-2" : "lg:pl-2"}`}
               style={{ background: product.background }}
             >
               <div
-                className="rounded-lg overflow-hidden relative"
+                className="rounded-lg overflow-hidden relative h-full"
                 style={{
                   background: index === 1
                     ? 'linear-gradient(135deg, #645AFF 0%, #7B72FF 100%)'
                     : '#FFF'
                 }}
               >
-                <div className="p-8 sm:p-12 lg:p-16 flex flex-col gap-6 relative">
+                <div className="p-6 sm:p-8 lg:p-10 flex flex-col gap-6 relative">
                   <div className="flex flex-col gap-2 relative z-10">
                     <div className="px-1">
                       <span className={`${product.labelColor} font-mono text-[10px] sm:text-xs uppercase tracking-[1.44px] font-normal`}>
@@ -688,7 +718,7 @@ function ProductsSection() {
                     <img
                       src={product.productImage}
                       alt={product.title}
-                      className={`absolute -right-[324px] -bottom-[324px] w-[648px] h-[648px] aspect-square ${product.imageOpacity}`}
+                      className={`absolute right-0 bottom-0 w-[200px] h-[200px] aspect-square ${product.imageOpacity}`}
                     />
                   )}
                   {product.svg && product.svg}
@@ -731,11 +761,11 @@ function ProductsSection() {
           {products.slice(2, 4).map((product, index) => (
             <div
               key={index}
-              className={`p-2 ${index === 0 ? "lg:border-r border-black/20" : ""}`}
+              className={`py-2 ${index === 0 ? "lg:border-r border-black/20 lg:pr-2" : "lg:pl-2"}`}
               style={{ background: product.background }}
             >
-              <div className="bg-white rounded-lg overflow-hidden relative">
-                <div className="p-8 sm:p-12 lg:p-16 flex flex-col gap-6 relative">
+              <div className="bg-white rounded-lg overflow-hidden relative h-full">
+                <div className="p-6 sm:p-8 lg:p-10 flex flex-col gap-6 relative">
                   <div className="flex flex-col gap-2 relative z-10">
                     <div className="px-1">
                       <span className={`${product.labelColor} font-mono text-[10px] sm:text-xs uppercase tracking-[1.44px] font-normal`}>
@@ -754,7 +784,7 @@ function ProductsSection() {
                     <img
                       src={product.productImage}
                       alt={product.title}
-                      className={`absolute -right-[324px] -bottom-[324px] w-[648px] h-[648px] aspect-square ${product.imageOpacity}`}
+                      className={`absolute right-0 bottom-0 w-[200px] h-[200px] aspect-square ${product.imageOpacity}`}
                     />
                   )}
                   {product.svg && product.svg}
@@ -780,12 +810,16 @@ function ProductsSection() {
 // Part4: Enterprise Data Sources Section  
 function EnterpriseDataSourcesSection() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white relative">
+      <div className="absolute inset-0 flex justify-center pointer-events-none">
+        <div className="w-full max-w-[1440px] relative">
+          <div className="absolute top-0 bottom-0 w-px bg-black/20 hidden xl:block" style={{ left: '100px' }} />
+          <div className="absolute top-0 bottom-0 w-px bg-black/20 hidden xl:block" style={{ right: '101px' }} />
+        </div>
+      </div>
       <div className="relative max-w-[1440px] mx-auto">
-        <div className="absolute left-0 md:left-[120px] top-0 bottom-0 w-px bg-black/20 hidden md:block" />
-        <div className="absolute right-0 md:right-[121px] top-0 bottom-0 w-px bg-black/20 hidden md:block" />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-0 px-6 md:px-[120px] py-12 md:py-[88px]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-0 px-6 md:px-[132px] py-12 md:py-[88px]">
           <div className="flex flex-col max-w-[711px]">
             <div className="flex flex-col gap-4 p-8">
               <div className="flex items-center">
@@ -861,6 +895,255 @@ function EnterpriseDataSourcesSection() {
   );
 }
 
+// Part5: Enterprise Data Sources Section
+function EnterpriseDataSourcesIntegrationSection() {
+  // Integration button component with outline icons
+  const IntegrationButton = ({ label, icon }: { label: string; icon?: 'bank' | 'shield' | 'database' | 'cloud' | 'chart' }) => {
+    const icons = {
+      bank: (
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1.3125 5.57797H2.73438V9.29672H1.75C1.66298 9.29672 1.57952 9.33129 1.51798 9.39283C1.45645 9.45436 1.42188 9.53783 1.42188 9.62485C1.42188 9.71187 1.45645 9.79533 1.51798 9.85687C1.57952 9.9184 1.66298 9.95297 1.75 9.95297H12.25C12.337 9.95297 12.4205 9.9184 12.482 9.85687C12.5436 9.79533 12.5781 9.71187 12.5781 9.62485C12.5781 9.53783 12.5436 9.45436 12.482 9.39283C12.4205 9.33129 12.337 9.29672 12.25 9.29672H11.2656V5.57797H12.6875M7 1.42188L1.14078 4.9704C1.07995 5.00783 1.033 5.06408 1.00705 5.13063C0.981096 5.19717 0.977565 5.27036 0.99699 5.33909C1.01642 5.40782 1.05774 5.46834 1.11468 5.51145C1.17162 5.55456 1.24108 5.57792 1.3125 5.57797M7 1.42188L12.8592 4.9704C12.92 5.00783 12.967 5.06408 12.993 5.13063C13.0189 5.19717 13.0224 5.27036 13.003 5.33909C12.9836 5.40782 12.9423 5.46834 12.8853 5.51145C12.8284 5.55456 12.7589 5.57792 12.6875 5.57797M7 1.42188V1.42188M3.9375 5.57797V9.29672M6.125 5.57797V9.29672M7.875 5.57797V9.29672M10.0625 5.57797V9.29672" stroke="black" strokeWidth="0.875" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      ),
+      shield: (
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M7 12.6875C7 12.6875 11.8125 10.0625 11.8125 6.5625V2.625L7 1.3125L2.1875 2.625V6.5625C2.1875 10.0625 7 12.6875 7 12.6875Z" stroke="black" strokeWidth="0.875" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      ),
+      database: (
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="7" cy="3.5" rx="5.25" ry="1.75" stroke="black" strokeWidth="0.875" />
+          <path d="M12.25 3.5V10.5C12.25 11.4665 9.89949 12.25 7 12.25C4.10051 12.25 1.75 11.4665 1.75 10.5V3.5" stroke="black" strokeWidth="0.875" />
+          <path d="M12.25 7C12.25 7.9665 9.89949 8.75 7 8.75C4.10051 8.75 1.75 7.9665 1.75 7" stroke="black" strokeWidth="0.875" />
+        </svg>
+      ),
+      cloud: (
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10.9375 10.9375H4.15625C3.42215 10.9375 2.71812 10.6458 2.19898 10.1267C1.67984 9.60755 1.38818 8.90352 1.38818 8.16943C1.38818 7.43533 1.67984 6.7313 2.19898 6.21216C2.71812 5.69302 3.42215 5.40137 4.15625 5.40137C4.26719 4.54278 4.68605 3.75266 5.33494 3.17793C5.98384 2.60319 6.81816 2.28418 7.68311 2.28125C8.54807 2.27832 9.38448 2.59168 10.0371 3.16207C10.6897 3.73245 11.1138 4.51988 11.2304 5.37773C11.7388 5.49498 12.1929 5.78129 12.5198 6.19022C12.8468 6.59916 13.0276 7.10719 13.0329 7.63213C13.0382 8.15707 12.8678 8.66871 12.5492 9.08415C12.2307 9.49959 11.7826 9.79498 11.2768 9.92266" stroke="black" strokeWidth="0.875" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      ),
+      chart: (
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1.3125 11.8125V2.1875M1.3125 11.8125H12.6875M1.3125 11.8125V11.8125ZM4.375 11.375V7.875M7 11.375V5.25M9.625 11.375V7M12.25 11.375V3.5" stroke="black" strokeWidth="0.875" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      ),
+    };
+
+    return (
+      <button className="flex items-center gap-1.5 px-4 py-2 rounded-full bg-black/[0.03] border border-black/10 hover:bg-black/[0.06] transition-colors whitespace-nowrap flex-shrink-0">
+        {icon && icons[icon]}
+        <span className="text-black text-sm font-normal leading-5 tracking-[-0.14px]">{label}</span>
+      </button>
+    );
+  };
+
+  return (
+    <div className="bg-white relative">
+      {/* Vertical Guide Lines */}
+      <div className="absolute inset-0 flex justify-center pointer-events-none">
+        <div className="w-full max-w-[1440px] relative">
+          <div className="absolute top-0 bottom-0 w-px bg-black/20 hidden xl:block" style={{ left: '100px' }} />
+          <div className="absolute top-0 bottom-0 w-px bg-black/20 hidden xl:block" style={{ right: '101px' }} />
+        </div>
+      </div>
+
+      <div className="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-[132px]">
+        {/* Header */}
+        <div className="py-12 lg:py-20 border-b border-black/20">
+          <div className="flex flex-col gap-4">
+            <span className="font-mono text-xs font-normal tracking-[1.68px] uppercase text-black">
+              Enterprise Data Sources
+            </span>
+            <h1 className="text-3xl sm:text-4xl lg:text-[48px] font-medium leading-tight lg:leading-[56px] tracking-[-0.04em] text-black">
+              Connect to Your Enterprise Data
+            </h1>
+            <p className="text-sm sm:text-base font-normal leading-6 tracking-[-0.01em] text-black/60 max-w-3xl">
+              Our on-premises LLM includes a built-in decentralized indexer that connects securely to all your banking, credit union, and insurance data sources.
+            </p>
+          </div>
+        </div>
+
+        {/* Integration Section with 3 Rows */}
+        <div className="py-16 lg:py-24 relative overflow-hidden">
+          {/* Central Circle - Positioned Absolutely */}
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-30">
+            <div className="relative w-[320px] h-[320px] sm:w-[380px] sm:h-[380px] flex items-center justify-center">
+              {/* White glow overlay - extends beyond the circle to hide buttons */}
+              <div
+                className="absolute -inset-10 rounded-full"
+                style={{
+                  background: 'radial-gradient(50% 50% at 50% 50%, rgba(255,255,255,1) 45%, rgba(255,255,255,0.95) 55%, rgba(255,255,255,0) 75%)',
+                }}
+              />
+
+              {/* Solid white background circle */}
+              <div className="absolute inset-[20px] rounded-full bg-white z-[1]" />
+
+              {/* Decorative Radial Pattern */}
+              <div className="absolute inset-0 z-[2]">
+                <svg viewBox="0 0 380 380" className="w-full h-full">
+                  {/* Outer rings */}
+                  {[...Array(12)].map((_, i) => (
+                    <circle
+                      key={i}
+                      cx="190"
+                      cy="190"
+                      r={70 + i * 10}
+                      fill="none"
+                      stroke="rgba(0,0,0,0.08)"
+                      strokeWidth="1"
+                    />
+                  ))}
+                  {/* Radial lines */}
+                  {[...Array(36)].map((_, i) => {
+                    const angle = (i * 10 * Math.PI) / 180;
+                    const x1 = 190 + 60 * Math.cos(angle);
+                    const y1 = 190 + 60 * Math.sin(angle);
+                    const x2 = 190 + 180 * Math.cos(angle);
+                    const y2 = 190 + 180 * Math.sin(angle);
+                    return (
+                      <line
+                        key={i}
+                        x1={x1}
+                        y1={y1}
+                        x2={x2}
+                        y2={y2}
+                        stroke="rgba(0,0,0,0.05)"
+                        strokeWidth="1"
+                      />
+                    );
+                  })}
+                </svg>
+              </div>
+
+              {/* White glow behind text */}
+              <div
+                className="absolute inset-[60px] rounded-full z-[3]"
+                style={{
+                  background: 'radial-gradient(50% 50% at 50% 50%, rgba(255,255,255,1) 0%, rgba(255,255,255,0.95) 50%, rgba(255,255,255,0) 100%)',
+                }}
+              />
+
+              {/* Center Content */}
+              <div className="relative z-10 flex flex-col items-center gap-4 px-4">
+                <div className="flex flex-col items-center gap-2">
+                  <h2 className="text-xl sm:text-2xl font-medium leading-7 sm:leading-8 tracking-tight text-center text-black">
+                    On-Prem<br />Decentralized Indexer
+                  </h2>
+                  <p className="text-xs font-normal leading-4 tracking-tight text-center text-black/40">
+                    Included with On-Prem LLM
+                  </p>
+                </div>
+                <button className="flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-black hover:bg-gray-800 transition-colors">
+                  <span className="text-white text-sm font-normal leading-5 tracking-[-0.14px] whitespace-nowrap">
+                    View All 500+ Integrations
+                  </span>
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10.8281 3.5V9.1875M10.1719 9.1875V4.29188L3.73187 10.7319M3.26812 10.2681L9.70812 3.82812H4.81249" stroke="white" strokeWidth="0.875" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* Row 1 - Top */}
+          <div className="relative flex items-center justify-center mb-16">
+            <div className="flex items-center gap-3 overflow-x-auto" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+              <IntegrationButton label="Jack Henry Symitar" icon="bank" />
+              <IntegrationButton label="FIS IBS" icon="bank" />
+              <IntegrationButton label="Stripe" icon="bank" />
+              <div className="w-[200px]" /> {/* Spacer for center */}
+              <IntegrationButton label="Guidewire InsuranceSuite" icon="shield" />
+              <IntegrationButton label="Duck Creek" icon="shield" />
+              <IntegrationButton label="Majesco" icon="shield" />
+            </div>
+          </div>
+
+          {/* Row 2 - Middle */}
+          <div className="relative flex items-center justify-center mb-16">
+            <div className="flex items-center gap-3 overflow-x-auto" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+              <IntegrationButton label="IBM Security" icon="shield" />
+              <IntegrationButton label="Cisco Secure" icon="shield" />
+              <IntegrationButton label="Micros..." icon="shield" />
+              <div className="w-[280px]" /> {/* Spacer for center */}
+              <IntegrationButton label="MySQL" icon="database" />
+              <IntegrationButton label="Fiserv Business Analytics" icon="chart" />
+            </div>
+          </div>
+
+          {/* Row 3 - Bottom */}
+          <div className="relative flex items-center justify-center">
+            <div className="flex items-center gap-3 overflow-x-auto" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+              <IntegrationButton label="Power BI" icon="chart" />
+              <IntegrationButton label="AWS Financial Services" icon="cloud" />
+              <div className="w-[200px]" /> {/* Spacer for center */}
+              <IntegrationButton label="Google Cloud for Financial Services" icon="cloud" />
+              <IntegrationButton label="Salesforce Financial" icon="cloud" />
+            </div>
+          </div>
+
+          {/* Gradient Fades */}
+          <div className="hidden lg:block absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white to-transparent pointer-events-none z-20" />
+          <div className="hidden lg:block absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white to-transparent pointer-events-none z-20" />
+        </div>
+
+        {/* Divider */}
+        <div className="h-px bg-black/20" />
+
+        {/* Capability Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3">
+          <div className="flex flex-col gap-6 py-8 md:py-10 md:pr-8 border-b md:border-b-0 md:border-r border-black/20">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="40" height="40" rx="4" fill="#645AFF" />
+              <path d="M27.5 15.6875H24.3125V13.25C24.3125 12.1063 23.8581 11.0094 23.0494 10.2006C22.2406 9.39185 21.1437 8.9375 20 8.9375C18.8563 8.9375 17.7594 9.39185 16.9506 10.2006C16.1419 11.0094 15.6875 12.1063 15.6875 13.25V15.6875H12.5C12.1519 15.6875 11.8181 15.8258 11.5719 16.0719C11.3258 16.3181 11.1875 16.6519 11.1875 17V27.5C11.1875 27.8481 11.3258 28.1819 11.5719 28.4281C11.8181 28.6742 12.1519 28.8125 12.5 28.8125H27.5C27.8481 28.8125 28.1819 28.6742 28.4281 28.4281C28.6742 28.1819 28.8125 27.8481 28.8125 27.5V17C28.8125 16.6519 28.6742 16.3181 28.4281 16.0719C28.1819 15.8258 27.8481 15.6875 27.5 15.6875ZM16.8125 13.25C16.8125 12.4046 17.1483 11.5939 17.7461 10.9961C18.3439 10.3983 19.1546 10.0625 20 10.0625C20.8454 10.0625 21.6561 10.3983 22.2539 10.9961C22.8517 11.5939 23.1875 12.4046 23.1875 13.25V15.6875H16.8125V13.25ZM27.6875 27.5C27.6875 27.5497 27.6677 27.5974 27.6326 27.6326C27.5974 27.6677 27.5497 27.6875 27.5 27.6875H12.5C12.4503 27.6875 12.4026 27.6677 12.3674 27.6326C12.3323 27.5974 12.3125 27.5497 12.3125 27.5V17C12.3125 16.9503 12.3323 16.9026 12.3674 16.8674C12.4026 16.8323 12.4503 16.8125 12.5 16.8125H27.5C27.5497 16.8125 27.5974 16.8323 27.6326 16.8674C27.6677 16.9026 27.6875 16.9503 27.6875 17V27.5ZM20.9375 22.25C20.9375 22.4354 20.8825 22.6167 20.7795 22.7708C20.6765 22.925 20.5301 23.0452 20.3588 23.1161C20.1875 23.1871 19.999 23.2057 19.8171 23.1695C19.6352 23.1333 19.4682 23.044 19.3371 22.9129C19.206 22.7818 19.1167 22.6148 19.0805 22.4329C19.0443 22.251 19.0629 22.0625 19.1339 21.8912C19.2048 21.7199 19.325 21.5735 19.4792 21.4705C19.6333 21.3675 19.8146 21.3125 20 21.3125C20.2486 21.3125 20.4871 21.4113 20.6629 21.5871C20.8387 21.7629 20.9375 22.0014 20.9375 22.25Z" fill="white" />
+            </svg>
+            <div className="flex flex-col gap-1">
+              <h3 className="text-black text-lg font-medium leading-6 tracking-tight">
+                End-to-End Security
+              </h3>
+              <p className="text-black/60 text-sm font-normal leading-5 tracking-[-0.14px]">
+                Enterprise-grade encryption for financial data
+              </p>
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-6 py-8 md:py-10 md:px-8 border-b md:border-b-0 md:border-r border-black/20">
+            <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-[#645AFF]">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20.8125 4.49979V8.99979C20.8125 9.14898 20.7532 9.29205 20.6477 9.39754C20.5423 9.50303 20.3992 9.56229 20.25 9.56229H15.75C15.6008 9.56229 15.4577 9.50303 15.3523 9.39754C15.2468 9.29205 15.1875 9.14898 15.1875 8.99979C15.1875 8.85061 15.2468 8.70754 15.3523 8.60205C15.4577 8.49656 15.6008 8.43729 15.75 8.43729H18.8925L17.2003 6.74979C15.7716 5.31482 13.8318 4.50557 11.8069 4.49979H11.7638C9.75624 4.49346 7.82689 5.27746 6.39281 6.68229C6.34062 6.73677 6.27801 6.7802 6.20869 6.80998C6.13938 6.83977 6.06478 6.8553 5.98934 6.85567C5.9139 6.85603 5.83915 6.84122 5.76955 6.8121C5.69995 6.78299 5.63692 6.74018 5.58421 6.6862C5.5315 6.63223 5.49018 6.56821 5.46271 6.49794C5.43525 6.42768 5.4222 6.3526 5.42435 6.27719C5.42649 6.20178 5.44378 6.12757 5.47519 6.05897C5.5066 5.99038 5.55149 5.92881 5.60719 5.87792C7.24966 4.26467 9.46152 3.36336 11.7638 3.36917H11.8125C14.1356 3.37509 16.3613 4.30346 18 5.95011L19.6875 7.63761V4.49979C19.6875 4.35061 19.7468 4.20754 19.8523 4.10205C19.9577 3.99656 20.1008 3.93729 20.25 3.93729C20.3992 3.93729 20.5423 3.99656 20.6477 4.10205C20.7532 4.20754 20.8125 4.35061 20.8125 4.49979Z" fill="white" />
+                <path d="M3.1875 19.5002V15.0002C3.1875 14.851 3.24677 14.7079 3.35225 14.6024C3.45774 14.497 3.60082 14.4377 3.75 14.4377H8.25C8.39918 14.4377 8.54226 14.497 8.64775 14.6024C8.75324 14.7079 8.8125 14.851 8.8125 15.0002C8.8125 15.1494 8.75324 15.2925 8.64775 15.398C8.54226 15.5034 8.39918 15.5627 8.25 15.5627H5.1075L6.79969 17.2502C8.22844 18.6852 10.1682 19.4944 12.1931 19.5002H12.2362C14.2438 19.5065 16.1731 18.7225 17.6072 17.3177C17.6594 17.2632 17.722 17.2198 17.7913 17.19C17.8606 17.1602 17.9352 17.1447 18.0107 17.1443C18.0861 17.144 18.1608 17.1588 18.2305 17.1879C18.3001 17.217 18.3631 17.2598 18.4158 17.3138C18.4685 17.3678 18.5098 17.4318 18.5373 17.5021C18.5647 17.5723 18.5778 17.6474 18.5756 17.7228C18.5735 17.7982 18.5562 17.8724 18.5248 17.941C18.4934 18.0096 18.4485 18.0712 18.3928 18.1221C16.7503 19.7353 14.5385 20.6366 12.2362 20.6308H12.1875C9.86437 20.6249 7.63875 19.6965 6 18.0499L4.3125 16.3624V19.5002C4.3125 19.6494 4.25324 19.7925 4.14775 19.898C4.04226 20.0034 3.89918 20.0627 3.75 20.0627C3.60082 20.0627 3.45774 20.0034 3.35225 19.898C3.24677 19.7925 3.1875 19.6494 3.1875 19.5002Z" fill="white" />
+              </svg>
+            </div>
+            <div className="flex flex-col gap-1">
+              <h3 className="text-black text-lg font-medium leading-6 tracking-tight">
+                Secure Processing
+              </h3>
+              <p className="text-black/60 text-sm font-normal leading-5 tracking-[-0.14px]">
+                Process banking data where it lives
+              </p>
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-6 py-8 md:py-10 md:pl-8">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="40" height="40" rx="4" fill="#645AFF" />
+              <path d="M29 12.6875H11C10.6519 12.6875 10.3181 12.8258 10.0719 13.0719C9.82578 13.3181 9.6875 13.6519 9.6875 14V26C9.6875 26.3481 9.82578 26.6819 10.0719 26.9281C10.3181 27.1742 10.6519 27.3125 11 27.3125H29C29.3481 27.3125 29.6819 27.1742 29.9281 26.9281C30.1742 26.6819 30.3125 26.3481 30.3125 26V14C30.3125 13.6519 30.1742 13.3181 29.9281 13.0719C29.6819 12.8258 29.3481 12.6875 29 12.6875ZM11 13.8125H29C29.0497 13.8125 29.0974 13.8323 29.1326 13.8674C29.1677 13.9026 29.1875 13.9503 29.1875 14V16.4375H10.8125V14C10.8125 13.9503 10.8323 13.9026 10.8674 13.8674C10.9026 13.8323 10.9503 13.8125 11 13.8125ZM29 26.1875H11C10.9503 26.1875 10.9026 26.1677 10.8674 26.1326C10.8323 26.0974 10.8125 26.0497 10.8125 26V17.5625H29.1875V26C29.1875 26.0497 29.1677 26.0974 29.1326 26.1326C29.0974 26.1677 29.0497 26.1875 29 26.1875ZM27.3125 23.75C27.3125 23.8992 27.2532 24.0423 27.1477 24.1477C27.0423 24.2532 26.8992 24.3125 26.75 24.3125H23.75C23.6008 24.3125 23.4577 24.2532 23.3523 24.1477C23.2468 24.0423 23.1875 23.8992 23.1875 23.75C23.1875 23.6008 23.2468 23.4577 23.3523 23.3523C23.4577 23.2468 23.6008 23.1875 23.75 23.1875H26.75C26.8992 23.1875 27.0423 23.2468 27.1477 23.3523C27.2532 23.4577 27.3125 23.6008 27.3125 23.75ZM21.3125 23.75C21.3125 23.8992 21.2532 24.0423 21.1477 24.1477C21.0423 24.2532 20.8992 24.3125 20.75 24.3125H19.25C19.1008 24.3125 18.9577 24.2532 18.8523 24.1477C18.7468 24.0423 18.6875 23.8992 18.6875 23.75C18.6875 23.6008 18.7468 23.4577 18.8523 23.3523C18.9577 23.2468 19.1008 23.1875 19.25 23.1875H20.75C20.8992 23.1875 21.0423 23.2468 21.1477 23.3523C21.2532 23.4577 21.3125 23.6008 21.3125 23.75Z" fill="white" />
+            </svg>
+            <div className="flex flex-col gap-1">
+              <h3 className="text-black text-lg font-medium leading-6 tracking-tight">
+                Financial Data Connectivity
+              </h3>
+              <p className="text-black/60 text-sm font-normal leading-5 tracking-[-0.14px]">
+                Connect to all financial systems securely
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 // Part6: Knowledge Management Section
 function KnowledgeManagementSection() {
   const [activeTab, setActiveTab] = useState<string>("user-query");
@@ -873,12 +1156,16 @@ function KnowledgeManagementSection() {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white relative">
+      <div className="absolute inset-0 flex justify-center pointer-events-none">
+        <div className="w-full max-w-[1440px] relative">
+          <div className="absolute top-0 bottom-0 w-px bg-black/20 hidden xl:block" style={{ left: '100px' }} />
+          <div className="absolute top-0 bottom-0 w-px bg-black/20 hidden xl:block" style={{ right: '101px' }} />
+        </div>
+      </div>
       <div className="max-w-[1440px] mx-auto relative">
-        <div className="hidden lg:block absolute left-0 top-0 bottom-0 w-px bg-black/20 lg:left-[120px]" />
-        <div className="hidden lg:block absolute right-0 top-0 bottom-0 w-px bg-black/20 lg:right-[121px]" />
 
-        <div className="px-4 sm:px-8 lg:px-[120px]">
+        <div className="px-4 sm:px-8 lg:px-[132px]">
           <section className="py-8 lg:py-[88px]">
             <div className="flex flex-col gap-4 p-8 lg:p-8">
               <div className="flex items-center">
@@ -1025,111 +1312,112 @@ function KnowledgeManagementSection() {
 // Part8: Multi-Platform Section
 function MultiPlatformSection() {
   return (
-    <div className="min-h-screen bg-white">
-      <section className="relative w-full px-4 py-12 md:py-16 lg:py-20">
-        <div className="max-w-[1440px] mx-auto">
-          <div className="absolute left-0 top-0 bottom-0 w-px bg-black/20 hidden lg:block" style={{ left: '120px' }}></div>
-          <div className="absolute right-0 top-0 bottom-0 w-px bg-black/20 hidden lg:block" style={{ right: '121px' }}></div>
-
-          <div className="max-w-[1200px] mx-auto px-4 md:px-8 mb-8 md:mb-12">
-            <div className="flex flex-col gap-4 md:gap-6">
-              <div className="inline-flex items-center gap-2.5 px-1">
+    <div className="bg-white relative">
+      <div className="absolute inset-0 flex justify-center pointer-events-none">
+        <div className="w-full max-w-[1440px] relative">
+          <div className="absolute top-0 bottom-0 w-px bg-black/20 hidden xl:block" style={{ left: '100px' }} />
+          <div className="absolute top-0 bottom-0 w-px bg-black/20 hidden xl:block" style={{ right: '101px' }} />
+        </div>
+      </div>
+      <section className="relative w-full">
+        <div className="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-[132px]">
+          {/* Header */}
+          <div className="py-12 md:py-16 lg:py-[88px]">
+            <div className="flex flex-col gap-4">
+              <div className="px-1">
                 <span className="text-black font-mono text-xs md:text-sm tracking-[1.68px] uppercase">
                   Multi-Platform
                 </span>
               </div>
 
-              <h1 className="text-black text-3xl md:text-4xl lg:text-5xl font-medium leading-tight tracking-[-0.04em]">
+              <h1 className="text-black text-3xl md:text-4xl lg:text-[48px] font-medium leading-tight lg:leading-[56px] tracking-[-0.04em]">
                 Abbi Assist™ Everywhere You Work
               </h1>
 
-              <p className="text-black/60 text-sm md:text-base leading-relaxed tracking-[-0.01em] max-w-full">
+              <p className="text-black/60 text-sm md:text-base leading-6 tracking-[-0.01em]">
                 Deploy Abbi Assist wherever your team works - from desktop applications to mobile devices, Microsoft Teams and SharePoint - with consistent security and compliance.
               </p>
             </div>
           </div>
 
-          <div className="w-full h-px bg-black/20 my-8 md:my-12"></div>
+          {/* Divider */}
+          <div className="w-full h-px bg-black/20"></div>
 
-          <div className="max-w-[1200px] mx-auto px-4 md:px-8 my-12 md:my-16">
-            <div className="relative w-full rounded-lg overflow-hidden bg-black/10 backdrop-blur-sm p-2 md:p-4">
-              <div className="relative w-full bg-[#EBEBEB] rounded-lg overflow-hidden shadow-lg">
-                <img
-                  src="https://cdn.builder.io/api/v1/image/assets%2Fb706e65dd52a4d778739dcbc100f15a9%2F115d4bcc28f248e889ba0ab791794184?format=webp&width=1200"
-                  alt="Abbi Assist in Microsoft Teams"
-                  className="w-full h-auto object-contain"
-                />
+          {/* Product Image */}
+          <div className="py-8 md:py-12">
+            <div className="relative w-full overflow-hidden">
+              <img
+                src="/product.png"
+                alt="Abbi Assist in Microsoft Teams"
+                className="w-full h-auto object-contain"
+              />
+            </div>
+          </div>
+
+          {/* Pagination Dots */}
+          <div className="flex items-center justify-end gap-3 py-6">
+            <div className="w-3 h-3 rounded-full bg-black"></div>
+            <div className="w-3 h-3 rounded-full border border-black/40"></div>
+            <div className="w-3 h-3 rounded-full border border-black/40"></div>
+            <div className="w-3 h-3 rounded-full border border-black/40"></div>
+          </div>
+
+          {/* Divider */}
+          <div className="w-full h-px bg-black/20"></div>
+
+          {/* Feature Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3">
+            <div className="flex flex-col gap-4 py-8 md:py-10 md:pr-8 border-b md:border-b-0 md:border-r border-black/20">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="40" height="40" rx="4" fill="#645AFF" />
+                <path d="M29.75 29.1875H27.3125V10.8125H28.25C28.3992 10.8125 28.5423 10.7532 28.6477 10.6477C28.7532 10.5423 28.8125 10.3992 28.8125 10.25C28.8125 10.1008 28.7532 9.95774 28.6477 9.85225C28.5423 9.74676 28.3992 9.6875 28.25 9.6875H11.75C11.6008 9.6875 11.4577 9.74676 11.3523 9.85225C11.2468 9.95774 11.1875 10.1008 11.1875 10.25C11.1875 10.3992 11.2468 10.5423 11.3523 10.6477C11.4577 10.7532 11.6008 10.8125 11.75 10.8125H12.6875V29.1875H10.25C10.1008 29.1875 9.95774 29.2468 9.85225 29.3523C9.74676 29.4577 9.6875 29.6008 9.6875 29.75C9.6875 29.8992 9.74676 30.0423 9.85225 30.1477C9.95774 30.2532 10.1008 30.3125 10.25 30.3125H29.75C29.8992 30.3125 30.0423 30.2532 30.1477 30.1477C30.2532 30.0423 30.3125 29.8992 30.3125 29.75C30.3125 29.6008 30.2532 29.4577 30.1477 29.3523C30.0423 29.2468 29.8992 29.1875 29.75 29.1875ZM13.8125 10.8125H26.1875V29.1875H22.8125V25.25C22.8125 25.1008 22.7532 24.9577 22.6477 24.8523C22.5423 24.7468 22.3992 24.6875 22.25 24.6875H17.75C17.6008 24.6875 17.4577 24.7468 17.3523 24.8523C17.2468 24.9577 17.1875 25.1008 17.1875 25.25V29.1875H13.8125V10.8125ZM21.6875 29.1875H18.3125V25.8125H21.6875V29.1875ZM16.4375 14C16.4375 13.8508 16.4968 13.7077 16.6023 13.6023C16.7077 13.4968 16.8508 13.4375 17 13.4375H18.5C18.6492 13.4375 18.7923 13.4968 18.8977 13.6023C19.0032 13.7077 19.0625 13.8508 19.0625 14C19.0625 14.1492 19.0032 14.2923 18.8977 14.3977C18.7923 14.5032 18.6492 14.5625 18.5 14.5625H17C16.8508 14.5625 16.7077 14.5032 16.6023 14.3977C16.4968 14.2923 16.4375 14.1492 16.4375 14ZM20.9375 14C20.9375 13.8508 20.9968 13.7077 21.1023 13.6023C21.2077 13.4968 21.3508 13.4375 21.5 13.4375H23C23.1492 13.4375 23.2923 13.4968 23.3977 13.6023C23.5032 13.7077 23.5625 13.8508 23.5625 14C23.5625 14.1492 23.5032 14.2923 23.3977 14.3977C23.2923 14.5032 23.1492 14.5625 23 14.5625H21.5C21.3508 14.5625 21.2077 14.5032 21.1023 14.3977C20.9968 14.2923 20.9375 14.1492 20.9375 14ZM16.4375 17.75C16.4375 17.6008 16.4968 17.4577 16.6023 17.3523C16.7077 17.2468 16.8508 17.1875 17 17.1875H18.5C18.6492 17.1875 18.7923 17.2468 18.8977 17.3523C19.0032 17.4577 19.0625 17.6008 19.0625 17.75C19.0625 17.8992 19.0032 18.0423 18.8977 18.1477C18.7923 18.2532 18.6492 18.3125 18.5 18.3125H17C16.8508 18.3125 16.7077 18.2532 16.6023 18.1477C16.4968 18.0423 16.4375 17.8992 16.4375 17.75ZM20.9375 17.75C20.9375 17.6008 20.9968 17.4577 21.1023 17.3523C21.2077 17.2468 21.3508 17.1875 21.5 17.1875H23C23.1492 17.1875 23.2923 17.2468 23.3977 17.3523C23.5032 17.4577 23.5625 17.6008 23.5625 17.75C23.5625 17.8992 23.5032 18.0423 23.3977 18.1477C23.2923 18.2532 23.1492 18.3125 23 18.3125H21.5C21.3508 18.3125 21.2077 18.2532 21.1023 18.1477C20.9968 18.0423 20.9375 17.8992 20.9375 17.75ZM17 22.0625C16.8508 22.0625 16.7077 22.0032 16.6023 21.8977C16.4968 21.7923 16.4375 21.6492 16.4375 21.5C16.4375 21.3508 16.4968 21.2077 16.6023 21.1023C16.7077 20.9968 16.8508 20.9375 17 20.9375H18.5C18.6492 20.9375 18.7923 20.9968 18.8977 21.1023C19.0032 21.2077 19.0625 21.3508 19.0625 21.5C19.0625 21.6492 19.0032 21.7923 18.8977 21.8977C18.7923 22.0032 18.6492 22.0625 18.5 22.0625H17ZM20.9375 21.5C20.9375 21.3508 20.9968 21.2077 21.1023 21.1023C21.2077 20.9968 21.3508 20.9375 21.5 20.9375H23C23.1492 20.9375 23.2923 20.9968 23.3977 21.1023C23.5032 21.2077 23.5625 21.3508 23.5625 21.5C23.5625 21.6492 23.5032 21.7923 23.3977 21.8977C23.2923 22.0032 23.1492 22.0625 23 22.0625H21.5C21.3508 22.0625 21.2077 22.0032 21.1023 21.8977C20.9968 21.7923 20.9375 21.6492 20.9375 21.5Z" fill="white" />
+              </svg>
+
+              <div className="flex flex-col gap-1">
+                <h3 className="text-black text-base md:text-lg font-medium leading-tight tracking-[-0.02em]">
+                  Enterprise Applications
+                </h3>
+                <p className="text-black/60 text-sm leading-5 tracking-[-0.01em]">
+                  Seamlessly integrate with your existing enterprise software and internal tools.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-4 py-8 md:py-10 md:px-8 border-b md:border-b-0 md:border-r border-black/20">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="40" height="40" rx="4" fill="#645AFF" />
+                <path d="M15.6875 18.3126H14.75C14.6008 18.3126 14.4577 18.2533 14.3523 18.1478C14.2468 18.0423 14.1875 17.8993 14.1875 17.7501C14.1875 17.6009 14.2468 17.4578 14.3523 17.3523C14.4577 17.2469 14.6008 17.1876 14.75 17.1876H17.75C17.8992 17.1876 18.0423 17.2469 18.1477 17.3523C18.2532 17.4578 18.3125 17.6009 18.3125 17.7501C18.3125 17.8993 18.2532 18.0423 18.1477 18.1478C18.0423 18.2533 17.8992 18.3126 17.75 18.3126H16.8125V22.2501C16.8125 22.3993 16.7532 22.5423 16.6477 22.6478C16.5423 22.7533 16.3992 22.8126 16.25 22.8126C16.1008 22.8126 15.9577 22.7533 15.8523 22.6478C15.7468 22.5423 15.6875 22.3993 15.6875 22.2501V18.3126ZM29.5625 16.6945V22.2501C29.5626 23.163 29.2128 24.0412 28.5849 24.7039C27.9571 25.3666 27.0991 25.7634 26.1875 25.8126C25.7702 26.9172 25.0264 27.8686 24.055 28.54C23.0837 29.2115 21.9308 29.5711 20.75 29.5711C19.5692 29.5711 18.4163 29.2115 17.445 28.54C16.4736 27.8686 15.7298 26.9172 15.3125 25.8126H11.75C11.4019 25.8126 11.0681 25.6743 10.8219 25.4282C10.5758 25.182 10.4375 24.8482 10.4375 24.5001V15.5001C10.4375 15.152 10.5758 14.8182 10.8219 14.572C11.0681 14.3259 11.4019 14.1876 11.75 14.1876H17.3131C17.0858 13.3461 17.1748 12.4505 17.5633 11.6703C17.9518 10.89 18.6129 10.2793 19.4215 9.9537C20.23 9.6281 21.1299 9.61021 21.9507 9.90342C22.7715 10.1966 23.4564 10.7806 23.8756 11.5448C24.4384 11.229 25.0927 11.1163 25.7287 11.2257C26.3647 11.3351 26.9438 11.6599 27.3687 12.1456C27.7936 12.6314 28.0386 13.2484 28.0625 13.8933C28.0864 14.5382 27.8878 15.1718 27.5 15.6876H28.5575C28.8241 15.6883 29.0796 15.7947 29.268 15.9834C29.4564 16.1722 29.5623 16.4278 29.5625 16.6945ZM24.2581 12.636C24.2943 12.8387 24.3125 13.0442 24.3125 13.2501C24.3127 14.1555 23.9681 15.0271 23.3488 15.6876H25.25C25.5165 15.6878 25.7792 15.625 26.0167 15.5042C26.2542 15.3834 26.4597 15.2081 26.6164 14.9926C26.7731 14.7771 26.8766 14.5275 26.9183 14.2643C26.96 14.0012 26.9388 13.7319 26.8564 13.4785C26.7741 13.225 26.6329 12.9947 26.4444 12.8064C26.2559 12.6181 26.0255 12.477 25.772 12.3949C25.5186 12.3127 25.2493 12.2917 24.9861 12.3336C24.723 12.3755 24.4735 12.4792 24.2581 12.636ZM18.5 14.1876H20.75C21.0653 14.188 21.37 14.3019 21.6083 14.5084C21.8465 14.715 22.0024 15.0005 22.0475 15.3126C22.441 15.0651 22.7555 14.7102 22.9539 14.2899C23.1523 13.8695 23.2265 13.4012 23.1675 12.9401C23.1085 12.479 22.9189 12.0444 22.6211 11.6875C22.3233 11.3307 21.9296 11.0664 21.4865 10.9259C21.0434 10.7853 20.5694 10.7745 20.1203 10.8945C19.6712 11.0145 19.2658 11.2604 18.9519 11.6033C18.638 11.9461 18.4287 12.3716 18.3486 12.8294C18.2685 13.2873 18.3211 13.7586 18.5 14.1876ZM11.75 24.6876H20.75C20.7997 24.6876 20.8474 24.6678 20.8826 24.6327C20.9177 24.5975 20.9375 24.5498 20.9375 24.5001V15.5001C20.9375 15.4504 20.9177 15.4027 20.8826 15.3675C20.8474 15.3323 20.7997 15.3126 20.75 15.3126H11.75C11.7003 15.3126 11.6526 15.3323 11.6174 15.3675C11.5823 15.4027 11.5625 15.4504 11.5625 15.5001V24.5001C11.5625 24.5498 11.5823 24.5975 11.6174 24.6327C11.6526 24.6678 11.7003 24.6876 11.75 24.6876ZM25.4375 23.7501V17.0001C25.4375 16.9504 25.4177 16.9027 25.3826 16.8675C25.3474 16.8323 25.2997 16.8126 25.25 16.8126H22.0625V24.5001C22.0625 24.8482 21.9242 25.182 21.6781 25.4282C21.4319 25.6743 21.0981 25.8126 20.75 25.8126H16.5406C17.0067 26.7637 17.7811 27.529 18.7377 27.9837C19.6943 28.4384 20.7768 28.5557 21.8086 28.3165C22.8404 28.0773 23.7608 27.4957 24.4198 26.6665C25.0788 25.8372 25.4375 24.8093 25.4375 23.7501ZM28.4375 16.8126H26.5475C26.5568 16.8747 26.5618 16.9373 26.5625 17.0001V23.7501C26.5624 24.047 26.5399 24.3435 26.495 24.637C27.0439 24.5231 27.5367 24.2236 27.8906 23.7888C28.2444 23.3541 28.4375 22.8106 28.4375 22.2501V16.8126Z" fill="white" />
+              </svg>
+
+              <div className="flex flex-col gap-1">
+                <h3 className="text-black text-base md:text-lg font-medium leading-tight tracking-[-0.02em]">
+                  Microsoft 365
+                </h3>
+                <p className="text-black/60 text-sm leading-5 tracking-[-0.01em]">
+                  Native integration with Teams, SharePoint, and other Microsoft 365 applications.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-4 py-8 md:py-10 md:pl-8">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="40" height="40" rx="4" fill="#645AFF" />
+                <path d="M24.5 9.6875H15.5C14.953 9.6875 14.4284 9.9048 14.0416 10.2916C13.6548 10.6784 13.4375 11.203 13.4375 11.75V28.25C13.4375 28.797 13.6548 29.3216 14.0416 29.7084C14.4284 30.0952 14.953 30.3125 15.5 30.3125H24.5C25.047 30.3125 25.5716 30.0952 25.9584 29.7084C26.3452 29.3216 26.5625 28.797 26.5625 28.25V11.75C26.5625 11.203 26.3452 10.6784 25.9584 10.2916C25.5716 9.9048 25.047 9.6875 24.5 9.6875ZM25.4375 28.25C25.4375 28.4986 25.3387 28.7371 25.1629 28.9129C24.9871 29.0887 24.7486 29.1875 24.5 29.1875H15.5C15.2514 29.1875 15.0129 29.0887 14.8371 28.9129C14.6613 28.7371 14.5625 28.4986 14.5625 28.25V11.75C14.5625 11.5014 14.6613 11.2629 14.8371 11.0871C15.0129 10.9113 15.2514 10.8125 15.5 10.8125H24.5C24.7486 10.8125 24.9871 10.9113 25.1629 11.0871C25.3387 11.2629 25.4375 11.5014 25.4375 11.75V28.25ZM23.5625 13.25C23.5625 13.3992 23.5032 13.5423 23.3977 13.6477C23.2923 13.7532 23.1492 13.8125 23 13.8125H17C16.8508 13.8125 16.7077 13.7532 16.6023 13.6477C16.4968 13.5423 16.4375 13.3992 16.4375 13.25C16.4375 13.1008 16.4968 12.9577 16.6023 12.8523C16.7077 12.7468 16.8508 12.6875 17 12.6875H23C23.1492 12.6875 23.2923 12.7468 23.3977 12.8523C23.5032 12.9577 23.5625 13.1008 23.5625 13.25Z" fill="white" />
+              </svg>
+
+              <div className="flex flex-col gap-1">
+                <h3 className="text-black text-base md:text-lg font-medium leading-tight tracking-[-0.02em]">
+                  Mobile Access
+                </h3>
+                <p className="text-black/60 text-sm leading-5 tracking-[-0.01em]">
+                  Secure access from iOS and Android devices with native mobile applications.
+                </p>
               </div>
             </div>
           </div>
 
-          <div className="w-full h-px bg-black/20 my-8 md:my-12"></div>
-
-          <div className="flex items-center justify-center md:justify-end gap-4 px-4 md:px-8 max-w-[1200px] mx-auto my-6 md:my-8">
-            <div className="w-4 h-4 rounded-full bg-black"></div>
-            <div className="w-4 h-4 rounded-full border border-black/60"></div>
-            <div className="w-4 h-4 rounded-full border border-black/60"></div>
-            <div className="w-4 h-4 rounded-full border border-black/60"></div>
-          </div>
-
-          <div className="w-full h-px bg-black/20 my-8 md:my-12"></div>
-
-          <div className="max-w-[1200px] mx-auto px-4 md:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border-l border-black/20">
-              <div className="flex flex-col gap-6 p-6 md:p-8 border-r border-b md:border-b-0 border-black/20">
-                <div className="inline-flex p-2 items-center justify-center bg-white rounded w-fit">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M21.75 21.1875H19.3125V2.8125H20.25C20.3992 2.8125 20.5423 2.75324 20.6477 2.64775C20.7532 2.54226 20.8125 2.39918 20.8125 2.25C20.8125 2.10082 20.7532 1.95774 20.6477 1.85225C20.5423 1.74676 20.3992 1.6875 20.25 1.6875H3.75C3.60082 1.6875 3.45774 1.74676 3.35225 1.85225C3.24676 1.95774 3.1875 2.10082 3.1875 2.25C3.1875 2.39918 3.24676 2.54226 3.35225 2.64775C3.45774 2.75324 3.60082 2.8125 3.75 2.8125H4.6875V21.1875H2.25C2.10082 21.1875 1.95774 21.2468 1.85225 21.3523C1.74676 21.4577 1.6875 21.6008 1.6875 21.75C1.6875 21.8992 1.74676 22.0423 1.85225 22.1477C1.95774 22.2532 2.10082 22.3125 2.25 22.3125H21.75C21.8992 22.3125 22.0423 22.2532 22.1477 22.1477C22.2532 22.0423 22.3125 21.8992 22.3125 21.75C22.3125 21.6008 22.2532 21.4577 22.1477 21.3523C22.0423 21.2468 21.8992 21.1875 21.75 21.1875ZM5.8125 2.8125H18.1875V21.1875H14.8125V17.25C14.8125 17.1008 14.7532 16.9577 14.6477 16.8523C14.5423 16.7468 14.3992 16.6875 14.25 16.6875H9.75C9.60082 16.6875 9.45774 16.7468 9.35225 16.8523C9.24676 16.9577 9.1875 17.1008 9.1875 17.25V21.1875H5.8125V2.8125ZM13.6875 21.1875H10.3125V17.8125H13.6875V21.1875Z" fill="black" />
-                  </svg>
-                </div>
-
-                <div className="flex flex-col gap-1">
-                  <h3 className="text-black text-lg md:text-xl font-medium leading-tight tracking-[-0.02em]">
-                    Enterprise Applications
-                  </h3>
-                  <p className="text-black/60 text-sm leading-relaxed tracking-[-0.01em]">
-                    Seamlessly integrate with your existing enterprise software and internal tools.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex flex-col gap-6 p-6 md:p-8 border-r border-b md:border-b-0 border-black/20">
-                <div className="inline-flex p-2 items-center justify-center bg-white rounded w-fit">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M7.6875 10.3126H6.75C6.60082 10.3126 6.45774 10.2533 6.35225 10.1478C6.24676 10.0423 6.1875 9.89928 6.1875 9.75009C6.1875 9.60091 6.24676 9.45783 6.35225 9.35234C6.45774 9.24686 6.60082 9.18759 6.75 9.18759H9.75C9.89918 9.18759 10.0423 9.24686 10.1477 9.35234C10.2532 9.45783 10.3125 9.60091 10.3125 9.75009C10.3125 9.89928 10.2532 10.0423 10.1477 10.1478C10.0423 10.2533 9.89918 10.3126 9.75 10.3126H8.8125V14.2501C8.8125 14.3993 8.75324 14.5423 8.64775 14.6478C8.54226 14.7533 8.39918 14.8126 8.25 14.8126C8.10082 14.8126 7.95774 14.7533 7.85225 14.6478C7.74676 14.5423 7.6875 14.3993 7.6875 14.2501V10.3126ZM21.5625 8.69447V14.2501C21.5626 15.163 21.2128 16.0412 20.5849 16.7039C19.9571 17.3666 19.0991 17.7634 18.1875 17.8126H3.75C3.4019 17.8126 3.06806 17.6743 2.82192 17.4282C2.57578 17.182 2.4375 16.8482 2.4375 16.5001V7.50009C2.4375 7.152 2.57578 6.81816 2.82192 6.57201C3.06806 6.32587 3.4019 6.18759 3.75 6.18759H20.25C20.5981 6.18759 20.9319 6.32587 21.1781 6.57201C21.4242 6.81816 21.5625 7.152 21.5625 7.50009V8.69447Z" fill="black" />
-                  </svg>
-                </div>
-
-                <div className="flex flex-col gap-1">
-                  <h3 className="text-black text-lg md:text-xl font-medium leading-tight tracking-[-0.02em]">
-                    Microsoft 365
-                  </h3>
-                  <p className="text-black/60 text-sm leading-relaxed tracking-[-0.01em]">
-                    Native integration with Teams, SharePoint, and other Microsoft 365 applications.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex flex-col gap-6 p-6 md:p-8 border-black/20">
-                <div className="inline-flex p-2 items-center justify-center bg-white rounded w-fit">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M16.5 1.6875H7.5C6.95299 1.6875 6.42839 1.9048 6.04159 2.29159C5.6548 2.67839 5.4375 3.20299 5.4375 3.75V20.25C5.4375 20.797 5.6548 21.3216 6.04159 21.7084C6.42839 22.0952 6.95299 22.3125 7.5 22.3125H16.5C17.047 22.3125 17.5716 22.0952 17.9584 21.7084C18.3452 21.3216 18.5625 20.797 18.5625 20.25V3.75C18.5625 3.20299 18.3452 2.67839 17.9584 2.29159C17.5716 1.9048 17.047 1.6875 16.5 1.6875ZM17.4375 20.25C17.4375 20.4986 17.3387 20.7371 17.1629 20.9129C16.9871 21.0887 16.7486 21.1875 16.5 21.1875H7.5C7.25136 21.1875 7.0129 21.0887 6.83709 20.9129C6.66127 20.7371 6.5625 20.4986 6.5625 20.25V3.75C6.5625 3.50136 6.66127 3.2629 6.83709 3.08709C7.0129 2.91127 7.25136 2.8125 7.5 2.8125H16.5C16.7486 2.8125 16.9871 2.91127 17.1629 3.08709C17.3387 3.2629 17.4375 3.50136 17.4375 3.75V20.25ZM15.5625 5.25C15.5625 5.39918 15.5032 5.54226 15.3977 5.64775C15.2923 5.75324 15.1492 5.8125 15 5.8125H9C8.85082 5.8125 8.70774 5.75324 8.60225 5.64775C8.49676 5.54226 8.4375 5.39918 8.4375 5.25C8.4375 5.10082 8.49676 4.95774 8.60225 4.85225C8.70774 4.74676 8.85082 4.6875 9 4.6875H15C15.1492 4.6875 15.2923 4.74676 15.3977 4.85225C15.5032 4.95774 15.5625 5.10082 15.5625 5.25Z" fill="black" />
-                  </svg>
-                </div>
-
-                <div className="flex flex-col gap-1">
-                  <h3 className="text-black text-lg md:text-xl font-medium leading-tight tracking-[-0.02em]">
-                    Mobile Access
-                  </h3>
-                  <p className="text-black/60 text-sm leading-relaxed tracking-[-0.01em]">
-                    Secure access from iOS and Android devices with native mobile applications.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="w-full h-px bg-black/20 mt-8 md:mt-12"></div>
+          {/* Bottom Divider */}
+          <div className="w-full h-px bg-black/20"></div>
         </div>
       </section>
     </div>
@@ -1140,11 +1428,15 @@ function MultiPlatformSection() {
 function TruthAssuranceSection() {
   return (
     <div className="relative w-full bg-white overflow-hidden">
+      <div className="absolute inset-0 flex justify-center pointer-events-none">
+        <div className="w-full max-w-[1440px] relative">
+          <div className="absolute top-0 bottom-0 w-px bg-black/20 hidden xl:block" style={{ left: '100px' }} />
+          <div className="absolute top-0 bottom-0 w-px bg-black/20 hidden xl:block" style={{ right: '101px' }} />
+        </div>
+      </div>
       <section className="relative w-full max-w-[1440px] mx-auto">
-        <div className="absolute left-0 top-0 bottom-0 w-px bg-black/20 hidden lg:block" style={{ left: 'calc((100% - 1200px) / 2)' }} />
-        <div className="absolute right-0 top-0 bottom-0 w-px bg-black/20 hidden lg:block" style={{ right: 'calc((100% - 1200px) / 2)' }} />
 
-        <div className="relative px-4 lg:px-[120px] py-8 lg:py-[88px]">
+        <div className="relative px-4 lg:px-[132px] py-8 lg:py-[88px]">
           <div className="max-w-[1200px] mx-auto">
             <div className="flex items-center justify-start mb-4">
               <div className="px-1">
@@ -1156,7 +1448,15 @@ function TruthAssuranceSection() {
 
             <div className="flex flex-col mb-4">
               <div className="flex items-baseline gap-1 flex-wrap">
-                <h1 className="text-3xl sm:text-4xl lg:text-[48px] font-medium leading-tight lg:leading-[56px] tracking-[-1.92px] text-[#645AFF]">
+                <h1
+                  className="text-3xl sm:text-4xl lg:text-[48px] font-medium leading-tight lg:leading-[56px] tracking-[-0.04em]"
+                  style={{
+                    background: 'linear-gradient(90deg, #C85AFF 0%, #645AFF 100%)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text',
+                  }}
+                >
                   Abacus Intelligence
                 </h1>
                 <svg className="w-2 h-2 flex-shrink-0" viewBox="0 0 8 8" fill="none">
@@ -1179,7 +1479,7 @@ function TruthAssuranceSection() {
           <div className="absolute w-2 h-2 rounded-full bg-white border border-black/20 hidden lg:block" style={{ right: 'calc((100% - 1200px) / 2 - 4px)', top: '-4px' }} />
         </div>
 
-        <div className="relative px-4 lg:px-[120px] py-8 lg:py-0">
+        <div className="relative px-4 lg:px-[132px] py-8 lg:py-0">
           <div className="max-w-[1200px] mx-auto">
             <div className="flex flex-col lg:flex-row items-stretch lg:min-h-[418px]">
               <div className="relative lg:w-[480px] p-8 lg:p-16 flex flex-col justify-end gap-6 bg-white overflow-hidden">
@@ -1215,33 +1515,33 @@ function TruthAssuranceSection() {
                   </div>
 
                   <div className="px-4 lg:px-8 py-5 space-y-2">
-                    <div className="flex items-center gap-1.5 py-1.5 pl-6">
-                      <span className="flex-1 text-base font-medium leading-5 tracking-[-0.32px] text-black">
-                        Highlighted information detected - starting validation
-                      </span>
+                    <div className="flex items-center gap-3 py-1.5">
                       <div className="w-5 h-5 rounded-full bg-green-500/10 flex items-center justify-center flex-shrink-0">
                         <CheckCircle className="w-3 h-3 text-green-500" />
                       </div>
+                      <span className="flex-1 text-base font-medium leading-5 tracking-[-0.32px] text-black">
+                        Highlighted information detected - starting validation
+                      </span>
                     </div>
 
                     <div className="space-y-1.5">
-                      <div className="flex items-center gap-1.5 py-1.5 pl-6">
+                      <div className="flex items-center gap-3 py-1.5">
+                        <div className="w-5 h-5 rounded-full bg-[#645AFF]/10 flex items-center justify-center flex-shrink-0">
+                          <CheckCircle className="w-3 h-3 text-[#645AFF]" />
+                        </div>
                         <span className="flex-1 text-base font-medium leading-5 tracking-[-0.32px] text-black">
                           Validating information through multiple sources
                         </span>
-                        <div className="w-5 h-5 rounded-full bg-[#645AFF]/10 flex items-center justify-center flex-shrink-0">
-                          <div className="w-3 h-3 border-2 border-[#645AFF] border-t-transparent rounded-full animate-spin"></div>
-                        </div>
                       </div>
                     </div>
 
-                    <div className="flex items-center gap-1.5 py-1.5 pl-6">
-                      <span className="flex-1 text-base font-medium leading-5 tracking-[-0.32px] text-black">
-                        Validation complete - Information verified
-                      </span>
+                    <div className="flex items-center gap-3 py-1.5">
                       <div className="w-5 h-5 rounded-full bg-black/5 flex items-center justify-center flex-shrink-0">
                         <div className="w-2 h-2 rounded-full bg-black/30"></div>
                       </div>
+                      <span className="flex-1 text-base font-medium leading-5 tracking-[-0.32px] text-black">
+                        Validation complete - Information verified
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -1255,7 +1555,7 @@ function TruthAssuranceSection() {
           <div className="absolute w-2 h-2 rounded-full bg-white border border-black/20 hidden lg:block" style={{ right: 'calc((100% - 1200px) / 2 - 4px)', top: '-4px' }} />
         </div>
 
-        <div className="relative px-4 lg:px-[120px]">
+        <div className="relative px-4 lg:px-[132px]">
           <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-3">
             <div className="p-8 flex flex-col gap-6 border-r-0 md:border-r border-black/20">
               <div className="inline-flex p-2 items-center gap-2.5 rounded bg-black/5 w-fit">

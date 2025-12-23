@@ -21,12 +21,14 @@ export default function OnPremisesSection() {
 
   return (
     <section className="relative w-full bg-white overflow-hidden">
-      <div className="absolute left-0 top-0 bottom-0 w-full max-w-[1440px] mx-auto">
-        <div className="absolute left-[120px] top-0 bottom-0 w-px bg-black/20 hidden lg:block" />
-        <div className="absolute right-[120px] top-0 bottom-0 w-px bg-black/20 hidden lg:block" />
+      <div className="absolute inset-0 flex justify-center pointer-events-none">
+        <div className="w-full max-w-[1440px] relative">
+          <div className="absolute top-0 bottom-0 w-px bg-black/20 hidden xl:block" style={{ left: '100px' }} />
+          <div className="absolute top-0 bottom-0 w-px bg-black/20 hidden xl:block" style={{ right: '101px' }} />
+        </div>
       </div>
 
-      <div className="relative max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[120px]">
+      <div className="relative max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-[132px]">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 py-12 lg:py-[88px]">
           <div className="flex flex-col">
             <div className="flex flex-col gap-4 px-0 sm:px-4 lg:px-8 mb-8 lg:mb-12">

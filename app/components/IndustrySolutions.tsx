@@ -22,8 +22,12 @@ function BankIcon() {
 export default function IndustrySolutions() {
   return (
     <section className="relative bg-white">
-      <div className="absolute left-0 top-0 h-full w-px bg-black/20 hidden xl:block" style={{ left: '120px' }} />
-      <div className="absolute right-0 top-0 h-full w-px bg-black/20 hidden xl:block" style={{ right: '121px' }} />
+      <div className="absolute inset-0 flex justify-center pointer-events-none">
+        <div className="w-full max-w-[1440px] relative">
+          <div className="absolute top-0 bottom-0 w-px bg-black/20 hidden xl:block" style={{ left: '100px' }} />
+          <div className="absolute top-0 bottom-0 w-px bg-black/20 hidden xl:block" style={{ right: '101px' }} />
+        </div>
+      </div>
 
       <SolutionGridDots />
 

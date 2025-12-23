@@ -229,8 +229,12 @@ function IndustryLeaders() {
 export default function Hero() {
   return (
     <div className="relative bg-black">
-      <div className="absolute left-0 top-[100px] h-[1663px] w-px bg-white/40 hidden xl:block" style={{ left: '120px' }} />
-      <div className="absolute right-0 top-[100px] h-[1663px] w-px bg-white/40 hidden xl:block" style={{ right: '121px' }} />
+      <div className="absolute inset-0 flex justify-center pointer-events-none">
+        <div className="w-full max-w-[1440px] relative">
+          <div className="absolute top-0 bottom-0 w-px bg-white/40 hidden xl:block" style={{ left: '100px' }} />
+          <div className="absolute top-0 bottom-0 w-px bg-white/40 hidden xl:block" style={{ right: '101px' }} />
+        </div>
+      </div>
       <div className="absolute left-0 w-full border-t border-white/40 hidden lg:block" style={{ top: '726px' }} />
 
       <GridDots />

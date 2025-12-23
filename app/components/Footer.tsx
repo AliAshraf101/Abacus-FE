@@ -3,21 +3,24 @@ export default function Footer() {
     <footer className="bg-black text-white relative">
       {/* Decorative lines */}
       <div className="absolute left-0 right-0 top-0 h-px bg-white/40" />
-      <div className="hidden lg:block absolute left-[120px] top-0 bottom-0 w-px bg-white/40" />
-      <div className="hidden lg:block absolute right-[120px] top-0 bottom-0 w-px bg-white/40" />
-      
-      {/* Decorative dots */}
-      <div className="hidden lg:block absolute left-[117px] top-0">
-        <svg width="8" height="8" viewBox="0 0 8 8" fill="none">
-          <circle cx="4" cy="4" r="4" fill="black"/>
-          <circle cx="4" cy="4" r="3.5" stroke="white" strokeOpacity="0.4"/>
-        </svg>
-      </div>
-      <div className="hidden lg:block absolute right-[117px] top-0">
-        <svg width="8" height="8" viewBox="0 0 8 8" fill="none">
-          <circle cx="4" cy="4" r="4" fill="black"/>
-          <circle cx="4" cy="4" r="3.5" stroke="white" strokeOpacity="0.4"/>
-        </svg>
+      <div className="absolute inset-0 flex justify-center pointer-events-none">
+        <div className="w-full max-w-[1440px] relative">
+          <div className="absolute top-0 bottom-0 w-px bg-white/40 hidden xl:block" style={{ left: '100px' }} />
+          <div className="absolute top-0 bottom-0 w-px bg-white/40 hidden xl:block" style={{ right: '101px' }} />
+          {/* Decorative dots */}
+          <div className="hidden xl:block absolute top-0" style={{ left: '97px' }}>
+            <svg width="8" height="8" viewBox="0 0 8 8" fill="none">
+              <circle cx="4" cy="4" r="4" fill="black"/>
+              <circle cx="4" cy="4" r="3.5" stroke="white" strokeOpacity="0.4"/>
+            </svg>
+          </div>
+          <div className="hidden xl:block absolute top-0" style={{ right: '98px' }}>
+            <svg width="8" height="8" viewBox="0 0 8 8" fill="none">
+              <circle cx="4" cy="4" r="4" fill="black"/>
+              <circle cx="4" cy="4" r="3.5" stroke="white" strokeOpacity="0.4"/>
+            </svg>
+          </div>
+        </div>
       </div>
 
       {/* Main content */}

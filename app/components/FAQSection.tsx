@@ -36,11 +36,15 @@ export default function FAQSection() {
   return (
     <div className="bg-white relative">
       {/* Decorative vertical lines */}
-      <div className="absolute left-0 md:left-[120px] top-0 w-px h-full bg-black/20 hidden md:block" />
-      <div className="absolute right-0 md:right-[121px] top-0 w-px h-full bg-black/20 hidden md:block" />
+      <div className="absolute inset-0 flex justify-center pointer-events-none">
+        <div className="w-full max-w-[1440px] relative">
+          <div className="absolute top-0 bottom-0 w-px bg-black/20 hidden xl:block" style={{ left: '100px' }} />
+          <div className="absolute top-0 bottom-0 w-px bg-black/20 hidden xl:block" style={{ right: '101px' }} />
+        </div>
+      </div>
 
       {/* Main Content Container */}
-      <div className="max-w-[1440px] mx-auto px-4 md:px-[120px] py-8 md:py-0">
+      <div className="max-w-[1440px] mx-auto px-4 md:px-[132px] py-8 md:py-0">
         {/* Header Section */}
         <div className="relative pt-8 md:pt-[88px] pb-8 md:pb-0">
           {/* Decorative dots - top left and right */}
