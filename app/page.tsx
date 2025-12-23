@@ -21,7 +21,7 @@ import EnterpriseSecuritySection from "./components/EnterpriseSecuritySection";
 export default function Home() {
   return (
     <div className="min-h-screen">
-      {/* Part1: Navigation */}
+      {/* Part1: Navigations */}
       <Navigation />
 
       {/* Part1: Hero */}
